@@ -1,0 +1,171 @@
+<header class="app-header">
+
+  <div class="app-header__brand">
+
+    <strong class="app-header__title">
+      Sua obra na mão
+    </strong>
+
+  </div>
+
+  @if (!isOpen) {
+
+    <div class="app-header__navigation">
+
+      <button
+        type="button"
+        class="navigation__open"
+        aria-label="Abrir menu"
+        (click)="openNavigationMenu()">
+
+        <span aria-hidden="true">☰</span>
+
+        <span>
+          Seu agente de obras
+        </span>
+
+      </button>
+
+    </div>
+
+  }
+
+</header>
+
+
+@if (isOpen) {
+
+  <aside class="sidebar">
+
+    <nav
+      class="navigation"
+      aria-label="Navegação principal">
+
+      <header class="navigation__header">
+
+        <div class="navigation__brand">
+
+          <strong class="navigation__title">
+            Sua obra na mão
+          </strong>
+
+        </div>
+
+        <button
+          class="navigation__close"
+          type="button"
+          aria-label="Fechar menu"
+          (click)="closeNavigation()">
+
+          <span aria-hidden="true">
+            ×
+          </span>
+
+        </button>
+
+      </header>
+
+
+      <ul class="navigation__list">
+
+        <li class="navigation__item">
+
+          <a
+            class="navigation__link"
+            href="#">
+
+            <span aria-hidden="true">
+              🏠
+            </span>
+
+            <span>
+              Dashboard
+            </span>
+
+          </a>
+
+        </li>
+
+
+        <li class="navigation__item">
+
+          <a
+            class="navigation__link"
+            href="#">
+
+            <span aria-hidden="true">
+              🧱
+            </span>
+
+            <span>
+              Fundações
+            </span>
+
+          </a>
+
+        </li>
+
+
+        <li class="navigation__item">
+
+          <a
+            class="navigation__link"
+            href="#">
+
+            <span aria-hidden="true">
+              🧱
+            </span>
+
+            <span>
+              Paredes
+            </span>
+
+          </a>
+
+        </li>
+
+
+        <li class="navigation__item">
+
+          <a
+            class="navigation__link"
+            href="#">
+
+            <span aria-hidden="true">
+              📦
+            </span>
+
+            <span>
+              Materiais
+            </span>
+
+          </a>
+
+        </li>
+
+
+        <li class="navigation__item">
+
+          <a
+            class="navigation__link"
+            href="#">
+
+            <span aria-hidden="true">
+              📊
+            </span>
+
+            <span>
+              Relatórios
+            </span>
+
+          </a>
+
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </aside>
+
+}

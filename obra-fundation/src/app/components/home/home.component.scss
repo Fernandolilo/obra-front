@@ -1,0 +1,145 @@
+.navigation {
+
+  width: 240px;
+  min-height: 100vh;
+
+  padding: 16px;
+
+  background-color: var(--primary-color);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 48px;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    color: var(--surface-color);
+
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: var(--border-radius-md);
+
+    background: transparent;
+    color: var(--surface-color);
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+      background-color 150ms ease,
+      color 150ms ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--surface-color);
+      outline-offset: 2px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 44px;
+
+    padding: 0 16px;
+
+    color: var(--surface-color);
+    text-decoration: none;
+
+    border-radius: var(--border-radius-md);
+
+    transition:
+      background-color 150ms ease,
+      color 150ms ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--surface-color);
+      outline-offset: 2px;
+    }
+  }
+
+  // =========================================================
+  // MENU FECHADO
+  // =========================================================
+
+  &__open {
+    display: flex;
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 0 16px;
+
+    border: 0;
+    border-radius: var(--border-radius-md);
+
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+      background-color 150ms ease,
+      box-shadow 150ms ease;
+
+    &:hover {
+      background-color: var(--primary-dark);
+      box-shadow: var(--shadow-md);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+  }
+}
