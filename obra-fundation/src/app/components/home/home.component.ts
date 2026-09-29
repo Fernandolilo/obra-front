@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +10,14 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  private readonly router = inject(Router);
+
+
   isOpen = false;
-  menuOpen=false;
+  menuOpen = false;
 
 
-   closeNavigationMenu(): void {
+  closeNavigationMenu(): void {
     this.menuOpen = false;
     this.isOpen = false;
   }
@@ -28,5 +32,11 @@ export class HomeComponent {
 
   openNavigation(): void {
     this.isOpen = true;
+  }
+
+  onNewFundacao(): void {
+    console.log('Navegando para fundacao-new');
+
+    this.router.navigate(['/fundacao-new']);
   }
 }

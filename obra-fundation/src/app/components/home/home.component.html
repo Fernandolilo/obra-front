@@ -2,170 +2,248 @@
 
   <div class="app-header__brand">
 
-    <strong class="app-header__title">
-      Sua obra na mão
-    </strong>
+    <span
+      class="app-header__title"
+      aria-label="Sua obra tocada de forma inteligente">
+
+      Sua obra tocada de forma inteligente
+
+    </span>
 
   </div>
 
   @if (!isOpen) {
 
-    <div class="app-header__navigation">
+    <button
+      type="button"
+      class="navigation__open"
+      aria-label="Abrir menu de navegação"
+      (click)="openNavigationMenu()">
 
-      <button
-        type="button"
-        class="navigation__open"
-        aria-label="Abrir menu"
-        (click)="openNavigationMenu()">
+      <span
+        class="navigation__open-icon"
+        aria-hidden="true">
+        ☰
+      </span>
 
-        <span aria-hidden="true">☰</span>
+      <span class="navigation__open-label">
+        Seu agente de obras
+      </span>
 
-        <span>
-          Seu agente de obras
-        </span>
-
-      </button>
-
-    </div>
+    </button>
 
   }
 
 </header>
 
 
-@if (isOpen) {
+<div class="app-layout">
 
-  <aside class="sidebar">
+  @if (isOpen) {
 
-    <nav
-      class="navigation"
-      aria-label="Navegação principal">
+    <aside
+      class="sidebar"
+      aria-label="Menu lateral">
 
-      <header class="navigation__header">
+      <nav
+        class="navigation"
+        aria-label="Navegação principal">
 
-        <div class="navigation__brand">
+        <header class="navigation__header">
 
-          <strong class="navigation__title">
-            Sua obra na mão
-          </strong>
+          <div class="navigation__brand">
 
-        </div>
+            <span class="navigation__title">
+              Sua obra na mão
+            </span>
 
-        <button
-          class="navigation__close"
-          type="button"
-          aria-label="Fechar menu"
-          (click)="closeNavigation()">
+          </div>
 
-          <span aria-hidden="true">
-            ×
-          </span>
-
-        </button>
-
-      </header>
-
-
-      <ul class="navigation__list">
-
-        <li class="navigation__item">
-
-          <a
-            class="navigation__link"
-            href="#">
+          <button
+            type="button"
+            class="navigation__close"
+            aria-label="Fechar menu de navegação"
+            (click)="closeNavigation()">
 
             <span aria-hidden="true">
-              🏠
+              ×
             </span>
 
-            <span>
-              Dashboard
-            </span>
+          </button>
 
-          </a>
-
-        </li>
+        </header>
 
 
-        <li class="navigation__item">
+        <ul class="navigation__list">
 
-          <a
-            class="navigation__link"
-            href="#">
+          <li class="navigation__item">
 
-            <span aria-hidden="true">
-              🧱
-            </span>
+            <a
+              class="navigation__link"
+              href="#">
 
-            <span>
-              Fundações
-            </span>
+              <span class="navigation__label">
+                Dashboard
+              </span>
 
-          </a>
+            </a>
 
-        </li>
+          </li>
 
 
-        <li class="navigation__item">
+          <li class="navigation__item">
 
-          <a
-            class="navigation__link"
-            href="#">
+            <a
+              class="navigation__link"
+              href="/fundacao-new">
 
-            <span aria-hidden="true">
-              🧱
-            </span>
+              <span class="navigation__label" (click)="onNewFundacao()">
+                Fundações 
+              </span>
 
-            <span>
-              Paredes
-            </span>
+            </a>
 
-          </a>
-
-        </li>
+          </li>
 
 
-        <li class="navigation__item">
+          <li class="navigation__item">
 
-          <a
-            class="navigation__link"
-            href="#">
+            <a
+              class="navigation__link"
+              href="#">
 
-            <span aria-hidden="true">
-              📦
-            </span>
+              <span class="navigation__label">
+                Paredes
+              </span>
 
-            <span>
-              Materiais
-            </span>
+            </a>
 
-          </a>
-
-        </li>
+          </li>
 
 
-        <li class="navigation__item">
+          <li class="navigation__item">
 
-          <a
-            class="navigation__link"
-            href="#">
+            <a
+              class="navigation__link"
+              href="#">
 
-            <span aria-hidden="true">
-              📊
-            </span>
+              <span class="navigation__label">
+                Materiais
+              </span>
 
-            <span>
-              Relatórios
-            </span>
+            </a>
 
-          </a>
+          </li>
 
-        </li>
 
-      </ul>
+          <li class="navigation__item">
 
-    </nav>
+            <a
+              class="navigation__link"
+              href="#">
 
-  </aside>
+              <span class="navigation__label">
+                Relatórios
+              </span>
 
-}
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </aside>
+
+  }
+
+
+  <main class="main-content">
+
+    <header class="main-content__header">
+
+      <div>
+
+        <span class="main-content__eyebrow">
+          Gestão de obras
+        </span>
+
+        <h1 class="main-content__title">
+          Sistema de gestão de obras
+        </h1>
+
+      </div>
+
+    </header>
+
+
+    <section
+  class="main-content__body"
+  aria-labelledby="main-content-title">
+
+  <header class="main-content__section-header">
+
+    <span class="main-content__eyebrow">
+      Visão geral
+    </span>
+
+    <h2 id="main-content-title">
+      Controle da obra em todas as fases
+    </h2>
+
+    <p>
+      Acompanhe cada etapa da obra, controle os materiais
+      e tenha acesso aos principais relatórios.
+    </p>
+
+  </header>
+
+  <div class="main-content__features">
+
+    <article class="feature-card">
+
+      <h3>
+        Controle da obra
+      </h3>
+
+      <p>
+        Acompanhe o andamento da obra e organize cada etapa
+        do projeto.
+      </p>
+
+    </article>
+
+    <article class="feature-card">
+
+      <h3>
+        Cálculo de materiais
+      </h3>
+
+      <p>
+        Calcule e acompanhe os materiais necessários para
+        cada etapa da construção.
+      </p>
+
+    </article>
+
+    <article class="feature-card">
+
+      <h3>
+        Relatórios
+      </h3>
+
+      <p>
+        Consulte informações e gere relatórios para
+        acompanhar o desempenho da obra.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+  </main>
+
+</div>

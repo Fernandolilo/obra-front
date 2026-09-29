@@ -1,0 +1,337 @@
+:host {
+  display: block;
+  min-height: 100%;
+  padding: 32px;
+}
+
+
+/* =====================================================
+   FORMULÁRIO
+   ===================================================== */
+
+.fundacao-form {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+
+  box-shadow: var(--shadow-lg);
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+   ===================================================== */
+
+.fundacao-form__header {
+  padding: 36px 40px;
+  margin-bottom: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      var(--primary-dark) 100%
+    );
+
+  color: var(--text-on-primary);
+
+  border-bottom: 4px solid var(--accent-color);
+}
+
+.fundacao-form__eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #d8d5ce;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fundacao-form__title {
+  margin: 0;
+
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.fundacao-form__description {
+  max-width: 720px;
+
+  margin: 12px 0 0;
+
+  color: #c7c4bd;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   SEÇÕES
+   ===================================================== */
+
+.fundacao-form__section {
+  margin: 0;
+  padding: 32px 40px;
+
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+
+  background: var(--surface-color);
+}
+
+.fundacao-form__section:last-of-type {
+  border-bottom: 0;
+}
+
+.fundacao-form__section legend {
+  width: 100%;
+
+  margin-bottom: 8px;
+  padding: 0;
+
+  color: var(--text-primary);
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.fundacao-form__section-description {
+  margin: 0 0 24px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   GRID DOS CAMPOS
+   ===================================================== */
+
+.fundacao-form__grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+
+  column-gap: 28px;
+  row-gap: 24px;
+
+  width: 100%;
+}
+
+
+/* =====================================================
+   CAMPOS
+   ===================================================== */
+
+.fundacao-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.fundacao-form__field label {
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   INPUTS E SELECTS
+   ===================================================== */
+
+.fundacao-form__field input,
+.fundacao-form__field select {
+  display: block;
+
+  width: 100%;
+  height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+
+  background: var(--surface-color);
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+
+/* =====================================================
+   FOCO
+   ===================================================== */
+
+.fundacao-form__field input:focus,
+.fundacao-form__field select:focus {
+  border-color: var(--accent-color);
+
+  box-shadow:
+    0 0 0 3px var(--accent-light);
+}
+
+
+/* =====================================================
+   HOVER
+   ===================================================== */
+
+.fundacao-form__field input:hover,
+.fundacao-form__field select:hover {
+  border-color: var(--border-color-hover);
+}
+
+
+/* =====================================================
+   CAMPOS INVÁLIDOS
+   ===================================================== */
+
+.fundacao-form__field
+input.ng-invalid.ng-touched,
+.fundacao-form__field
+select.ng-invalid.ng-touched {
+  border-color: var(--danger-color);
+}
+
+.fundacao-form__field
+input.ng-invalid.ng-touched:focus,
+.fundacao-form__field
+select.ng-invalid.ng-touched:focus {
+  box-shadow:
+    0 0 0 3px var(--danger-light);
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 760px) {
+
+  .fundacao-form__grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+}
+
+
+/* =====================================================
+   AÇÕES
+   ===================================================== */
+
+.fundacao-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 100%;
+  padding: 24px 40px;
+
+  background: var(--primary-light);
+
+  border-top: 1px solid var(--border-color);
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BOTÃO
+   ===================================================== */
+
+.fundacao-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 210px;
+  height: 48px;
+
+  padding: 0 24px;
+
+  border: 0;
+  border-radius: var(--border-radius-md);
+
+  background: var(--accent-color);
+  color: var(--text-on-accent);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.fundacao-form__submit:hover {
+  background: var(--accent-dark);
+
+  box-shadow: var(--shadow-md);
+
+  transform: translateY(-1px);
+}
+
+.fundacao-form__submit:active {
+  transform: translateY(0);
+}
+
+.fundacao-form__submit:focus-visible {
+  outline: 3px solid var(--accent-light);
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   BOTÃO RESPONSIVO
+   ===================================================== */
+
+@media (max-width: 760px) {
+
+  .fundacao-form__actions {
+    padding: 20px 22px;
+  }
+
+  .fundacao-form__submit {
+    width: 100%;
+    min-width: 0;
+  }
+
+}
