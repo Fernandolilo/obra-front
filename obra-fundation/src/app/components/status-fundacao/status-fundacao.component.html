@@ -1,0 +1,216 @@
+<main class="status-fundacao">
+
+  <header class="status-fundacao__header">
+
+    <div>
+
+      <span class="status-fundacao__eyebrow">
+        Gestão de obras
+      </span>
+
+      <h1 class="status-fundacao__title">
+        Status das fundações
+      </h1>
+
+      <p class="status-fundacao__description">
+        Acompanhe as etapas e o andamento das fundações cadastradas.
+      </p>
+
+    </div>
+
+  </header>
+
+
+  @if (carregando) {
+
+    <section class="status-fundacao__state">
+
+      <p>
+        Carregando fundações...
+      </p>
+
+    </section>
+
+  }
+
+
+  @if (erro) {
+
+    <section
+      class="status-fundacao__state status-fundacao__state--error">
+
+      <h2>
+        Erro ao carregar as fundações
+      </h2>
+
+      <p>
+        Não foi possível consultar o status das fundações.
+      </p>
+
+      <button
+        type="button"
+        (click)="findAll()">
+
+        Tentar novamente
+
+      </button>
+
+    </section>
+
+  }
+
+
+  @if (!carregando && !erro && fundacoes.length === 0) {
+
+    <section class="status-fundacao__state">
+
+      <h2>
+        Nenhuma fundação encontrada
+      </h2>
+
+      <p>
+        Ainda não existem fundações cadastradas.
+      </p>
+
+    </section>
+
+  }
+
+
+  @if (!carregando && !erro && fundacoes.length > 0) {
+
+    <section
+      class="status-fundacao__content"
+      aria-labelledby="status-fundacoes">
+
+      <header class="status-fundacao__content-header">
+
+        <div>
+
+          <h2 id="status-fundacoes">
+            Fundações da obra
+          </h2>
+
+          <p>
+            {{ fundacoes.length }} fundação(ões)
+          </p>
+
+        </div>
+
+      </header>
+
+
+      <div class="status-fundacao__table-wrapper">
+
+        <table class="status-fundacao__table">
+
+          <thead>
+
+            <tr>
+
+              <th scope="col">
+                Nº
+              </th>
+
+              <th scope="col">
+                Início
+              </th>
+
+              <th scope="col">
+                Término
+              </th>
+
+              <th scope="col">
+                Fundação
+              </th>
+
+              <th scope="col">
+                Etapa
+              </th>
+
+              <th scope="col">
+                Estaca
+              </th>
+
+              <th scope="col">
+                Sapata
+              </th>
+
+              <th scope="col">
+                Dimensões
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            @for (
+              fundacao of fundacoes;
+              track fundacao.numero
+            ) {
+
+              <tr>
+
+                <td>
+                  {{ fundacao.numero }}
+                </td>
+
+                <td>
+                  {{ fundacao.inicio }}
+                </td>
+
+                <td>
+                  {{ fundacao.fim }}
+                </td>
+
+                <td>
+                  {{ fundacao.modalFundacao.fundacao }}
+                </td>
+
+                <td>
+
+                  <span class="status-fundacao__etapa">
+
+                    {{ fundacao.modalFundacao.etapa }}
+
+                  </span>
+
+                </td>
+
+                <td>
+                  {{ fundacao.modalFundacao.estaca || '—' }}
+                </td>
+
+                <td>
+                  {{ fundacao.modalFundacao.sapata || '—' }}
+                </td>
+
+                <td>
+
+                  {{ fundacao.altura }}
+                  ×
+                  {{ fundacao.largura }}
+                  ×
+                  {{ fundacao.comprimento }}
+                  m
+
+                </td>
+
+              </tr>
+
+            }
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  }
+
+</main>

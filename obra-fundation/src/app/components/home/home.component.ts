@@ -39,4 +39,8 @@ export class HomeComponent {
 
     this.router.navigate(['/fundacao-new']);
   }
+
+   onStatusFundacao(): void {
+    this.router.navigate(['/fundacao-status']);
+  }
 }

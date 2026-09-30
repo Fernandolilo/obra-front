@@ -1,62 +1,90 @@
 :root {
 
   /* =========================================================
-     IDENTIDADE (Azul elétrico moderno e vibrante)
+     IDENTIDADE
      ========================================================= */
 
-  --primary-color: #0c3ba1;
-  --primary-dark: #2e2e2e;
-  --primary-light: #EFF6FF;
+  --primary-color: #17324D;
+  --primary-dark: #0E2438;
+  --primary-light: #EAF2F8;
 
-  --accent-color: #F59E0B;     /* Amarelo/Laranja solar e alegre */
-  --accent-dark: #D97706;
-  --accent-light: #FEF3C7;
+  --accent-color: #F28C28;
+  --accent-dark: #D96F0B;
+  --accent-light: #FFF1E2;
 
 
   /* =========================================================
-     STATUS (Cores bem definidas e saturadas)
+     STATUS
      ========================================================= */
 
-  --success-color: #10B981;
-  --success-light: #D1FAE5;
+  --success-color: #16A36A;
+  --success-dark: #108052;
+  --success-light: #E7F7F0;
 
-  --warning-color: #FBBF24;
-  --warning-light: #FEF9C3;
+  --warning-color: #F2B134;
+  --warning-dark: #D9940A;
+  --warning-light: #FFF7DF;
 
-  --danger-color: #EF4444;
-  --danger-light: #FEE2E2;
+  --danger-color: #E04F5F;
+  --danger-dark: #C73848;
+  --danger-light: #FCEBED;
 
-  --info-color: #06B6D4;
-  --info-light: #CFFAFE;
+  --info-color: #2384C6;
+  --info-dark: #17699F;
+  --info-light: #E7F3FB;
 
 
   /* =========================================================
-     FUNDO (Um toque levemente colorido e iluminado)
+     CORES COMPLEMENTARES
      ========================================================= */
 
-  --background-color: #F8FAFC;
+  --purple-color: #7657D9;
+  --purple-light: #F0ECFC;
+
+  --cyan-color: #16A6B6;
+  --cyan-light: #E6F7F9;
+
+  --blue-color: #2878D0;
+  --blue-light: #E8F1FC;
+
+
+  /* =========================================================
+     FUNDO
+     ========================================================= */
+
+  --background-color: #F3F6F9;
+
   --surface-color: #FFFFFF;
-  --surface-hover: #F1F5F9;
+
+  --surface-hover: #F7F9FB;
+
+  --surface-secondary: #EEF3F7;
 
 
   /* =========================================================
-     TEXTOS (Escuros, mas limpos e legíveis)
+     TEXTOS
      ========================================================= */
 
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  --text-primary: #17212B;
+
+  --text-secondary: #5F6B76;
+
+  --text-muted: #8C98A4;
 
   --text-on-primary: #FFFFFF;
-  --text-on-accent: #1E293B;
+
+  --text-on-accent: #FFFFFF;
 
 
   /* =========================================================
      BORDAS
      ========================================================= */
 
-  --border-color: #E2E8F0;
-  --border-color-hover: #CBD5E1;
+  --border-color: #D9E1E8;
+
+  --border-color-hover: #B8C6D2;
+
+  --border-color-focus: #2384C6;
 
 
   /* =========================================================
@@ -64,21 +92,51 @@
      ========================================================= */
 
   --shadow-sm:
-    0 1px 2px rgba(37, 99, 235, 0.05);
+    0 1px 3px rgba(23, 50, 77, 0.06);
 
   --shadow-md:
-    0 6px 18px rgba(37, 99, 235, 0.08);
+    0 6px 18px rgba(23, 50, 77, 0.10);
 
   --shadow-lg:
-    0 14px 35px rgba(37, 99, 235, 0.12);
+    0 14px 35px rgba(23, 50, 77, 0.14);
 
 
   /* =========================================================
      BORDAS
      ========================================================= */
 
-  --border-radius-sm: 5px;
+  --border-radius-sm: 6px;
+
   --border-radius-md: 10px;
+
   --border-radius-lg: 16px;
+
+  --border-radius-xl: 22px;
+
+
+  /* =========================================================
+     GRADIENTES
+     ========================================================= */
+
+  --gradient-primary:
+    linear-gradient(
+      135deg,
+      #17324D 0%,
+      #2384C6 100%
+    );
+
+  --gradient-accent:
+    linear-gradient(
+      135deg,
+      #F28C28 0%,
+      #F2B134 100%
+    );
+
+  --gradient-success:
+    linear-gradient(
+      135deg,
+      #16A36A 0%,
+      #16A6B6 100%
+    );
 
 }
