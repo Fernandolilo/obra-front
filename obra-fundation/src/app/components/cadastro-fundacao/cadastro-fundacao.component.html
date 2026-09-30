@@ -3,7 +3,6 @@
   [formGroup]="fundacaoForm"
   (ngSubmit)="onSubmit()">
 
-
   <!-- =====================================================
        CABEÇALHO
        ===================================================== -->
@@ -19,8 +18,8 @@
     </h1>
 
     <p class="fundacao-form__description">
-      Informe os dados da fundação, dimensões, materiais
-      e características da execução.
+      Informe os dados principais da fundação, suas dimensões
+      e classificação.
     </p>
 
   </header>
@@ -37,7 +36,6 @@
     </legend>
 
     <div class="fundacao-form__grid">
-
 
       <div class="fundacao-form__field">
 
@@ -66,7 +64,6 @@
 
       </div>
 
-
     </div>
 
   </fieldset>
@@ -83,12 +80,10 @@
     </legend>
 
     <p class="fundacao-form__section-description">
-      Informe as dimensões utilizadas para a execução da fundação.
+      Informe as dimensões utilizadas para o cálculo da cubagem.
     </p>
 
-
     <div class="fundacao-form__grid">
-
 
       <div class="fundacao-form__field">
 
@@ -140,14 +135,13 @@
 
       </div>
 
-
     </div>
 
   </fieldset>
 
 
   <!-- =====================================================
-       TIPO DA FUNDAÇÃO
+       CLASSIFICAÇÃO DA FUNDAÇÃO
        ===================================================== -->
 
   <fieldset
@@ -155,12 +149,10 @@
     formGroupName="modalFundacaoId">
 
     <legend>
-      Características da fundação
+      Classificação da fundação
     </legend>
 
-
     <div class="fundacao-form__grid">
-
 
       <div class="fundacao-form__field">
 
@@ -213,6 +205,17 @@
 
         </select>
 
+      </div> 
+
+      <!-- ================================================= ETAPA ================================================= --> 
+       <div class="fundacao-form__field"> 
+        <label for="etapa"> Etapa da fundação </label> 
+          <select id="etapa" formControlName="etapa"> 
+            <option value=""> Selecione </option>
+             @for (etapa of etapasFundacao; track etapa)
+              { <option [value]="etapa"> {{ etapa }}
+                 </option> } 
+        </select> 
       </div>
 
 
@@ -242,393 +245,6 @@
 
       </div>
 
-
-      <div class="fundacao-form__field">
-
-        <label for="etapa">
-          Etapa da fundação
-        </label>
-
-        <select
-          id="etapa"
-          formControlName="etapa">
-
-          <option value="">
-            Selecione
-          </option>
-
-          @for (etapa of etapasFundacao; track etapa) {
-
-            <option [value]="etapa">
-              {{ etapa }}
-            </option>
-
-          }
-
-        </select>
-
-      </div>
-
-
-    </div>
-
-  </fieldset>
-
-
-  <!-- =====================================================
-       CIMENTO
-       ===================================================== -->
-
-  <fieldset
-    class="fundacao-form__section"
-    formGroupName="cimento">
-
-    <legend>
-      Cimento
-    </legend>
-
-
-    <div class="fundacao-form__grid">
-
-
-      <div class="fundacao-form__field">
-
-        <label for="tipoCimento">
-          Tipo de cimento
-        </label>
-
-        <select
-          id="tipoCimento"
-          formControlName="tipoCimento">
-
-          <option value="">
-            Selecione
-          </option>
-
-          @for (tipo of tiposCimento; track tipo) {
-
-            <option [value]="tipo">
-              {{ tipo }}
-            </option>
-
-          }
-
-        </select>
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="tipoDeArea">
-          Tipo de área
-        </label>
-
-        <select
-          id="tipoDeArea"
-          formControlName="tipoDeArea">
-
-          <option value="">
-            Selecione
-          </option>
-
-          @for (tipo of tiposDeArea; track tipo) {
-
-            <option [value]="tipo">
-              {{ tipo }}
-            </option>
-
-          }
-
-        </select>
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="quantidadeCimento">
-          Quantidade
-        </label>
-
-        <input
-          id="quantidadeCimento"
-          type="number"
-          formControlName="quantidade"
-          min="0"
-          step="0.01"
-          inputmode="decimal">
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="quantoCimentoPorUm">
-          Cimento por unidade
-        </label>
-
-        <input
-          id="quantoCimentoPorUm"
-          type="number"
-          formControlName="quantoCimentoPorUm"
-          min="0"
-          step="0.01"
-          inputmode="decimal">
-
-      </div>
-
-
-    </div>
-
-  </fieldset>
-
-
-  <!-- =====================================================
-       AREIA
-       ===================================================== -->
-
-  <fieldset
-    class="fundacao-form__section"
-    formGroupName="areia">
-
-    <legend>
-      Areia
-    </legend>
-
-
-    <div class="fundacao-form__grid">
-
-
-      <div class="fundacao-form__field">
-
-        <label for="tipoAreia">
-          Tipo de areia
-        </label>
-
-        <select
-          id="tipoAreia"
-          formControlName="areia">
-
-          <option value="">
-            Selecione
-          </option>
-
-          @for (tipo of tiposAreia; track tipo) {
-
-            <option [value]="tipo">
-              {{ tipo }}
-            </option>
-
-          }
-
-        </select>
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="quantidadeAreia">
-          Quantidade
-        </label>
-
-        <input
-          id="quantidadeAreia"
-          type="number"
-          formControlName="quantidade"
-          min="0"
-          step="0.01"
-          inputmode="decimal">
-
-      </div>
-
-
-    </div>
-
-  </fieldset>
-
-
-  <!-- =====================================================
-       BRITA
-       ===================================================== -->
-
-  <fieldset
-    class="fundacao-form__section"
-    formGroupName="brita">
-
-    <legend>
-      Brita
-    </legend>
-
-
-    <div class="fundacao-form__grid">
-
-
-      <div class="fundacao-form__field">
-
-        <label for="tipoBrita">
-          Tipo de brita
-        </label>
-
-        <select
-          id="tipoBrita"
-          formControlName="brita">
-
-          <option value="">
-            Selecione
-          </option>
-
-          @for (tipo of tiposBrita; track tipo) {
-
-            <option [value]="tipo">
-              {{ tipo }}
-            </option>
-
-          }
-
-        </select>
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="quantidadeBrita">
-          Quantidade
-        </label>
-
-        <input
-          id="quantidadeBrita"
-          type="number"
-          formControlName="quantidade"
-          min="0"
-          step="0.01"
-          inputmode="decimal">
-
-      </div>
-
-
-    </div>
-
-  </fieldset>
-
-
-  <!-- =====================================================
-       FERRAGEM
-       ===================================================== -->
-
-  <fieldset
-    class="fundacao-form__section"
-    formGroupName="ferro">
-
-    <legend>
-      Ferragem
-    </legend>
-
-    <p class="fundacao-form__section-description">
-      Informe os dados da ferragem quando houver utilização de aço.
-    </p>
-
-
-    <div class="fundacao-form__grid">
-
-
-      <div class="fundacao-form__field">
-
-        <label for="espessura">
-          Espessura do aço
-        </label>
-
-        <select
-          id="espessura"
-          formControlName="espessura">
-
-          <option value="">
-            Selecione
-          </option>
-
-          @for (espessura of espessurasAco; track espessura) {
-
-            <option [value]="espessura">
-              {{ espessura }}
-            </option>
-
-          }
-
-        </select>
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="quantidadeFerro">
-          Quantidade
-        </label>
-
-        <input
-          id="quantidadeFerro"
-          type="number"
-          formControlName="quantidade"
-          min="0"
-          step="0.01"
-          inputmode="decimal">
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="comprimentoFerro">
-          Comprimento
-        </label>
-
-        <input
-          id="comprimentoFerro"
-          type="number"
-          formControlName="comprimento"
-          min="0"
-          step="0.01"
-          inputmode="decimal">
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="larguraFerro">
-          Largura
-        </label>
-
-        <input
-          id="larguraFerro"
-          type="number"
-          formControlName="largura"
-          min="0"
-          step="0.01"
-          inputmode="decimal">
-
-      </div>
-
-
-      <div class="fundacao-form__field">
-
-        <label for="alturaFerro">
-          Altura
-        </label>
-
-        <input
-          id="alturaFerro"
-          type="number"
-          formControlName="altura"
-          min="0"
-          step="0.01"
-          inputmode="decimal">
-
-      </div>
-
-
     </div>
 
   </fieldset>
@@ -649,6 +265,5 @@
     </button>
 
   </footer>
-
 
 </form>

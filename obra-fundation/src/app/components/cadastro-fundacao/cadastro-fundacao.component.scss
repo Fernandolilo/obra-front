@@ -284,8 +284,8 @@ select.ng-invalid.ng-touched:focus {
   border: 0;
   border-radius: var(--border-radius-md);
 
-  background: var(--accent-color);
-  color: var(--text-on-accent);
+  background: var(--primary-color);
+  color: var(--primary-light);
 
   font-family: inherit;
   font-size: 14px;
@@ -302,10 +302,10 @@ select.ng-invalid.ng-touched:focus {
 }
 
 .fundacao-form__submit:hover {
-  background: var(--accent-dark);
-
+  background: var(--primary-light);
+  color: var(--primary-color);
   box-shadow: var(--shadow-md);
-
+   border: 1px solid var(--primary-color);
   transform: translateY(-1px);
 }
 

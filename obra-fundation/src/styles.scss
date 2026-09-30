@@ -1,62 +1,62 @@
 :root {
 
   /* =========================================================
-     IDENTIDADE
+     IDENTIDADE (Azul elétrico moderno e vibrante)
      ========================================================= */
 
-  --primary-color: #1C1C1C;
-  --primary-dark: #111111;
-  --primary-light: #F2F1EE;
+  --primary-color: #0c3ba1;
+  --primary-dark: #2e2e2e;
+  --primary-light: #EFF6FF;
 
-  --accent-color: #C46A2B;
-  --accent-dark: #9E4F1F;
-  --accent-light: #F7E8DD;
+  --accent-color: #F59E0B;     /* Amarelo/Laranja solar e alegre */
+  --accent-dark: #D97706;
+  --accent-light: #FEF3C7;
 
 
   /* =========================================================
-     STATUS
+     STATUS (Cores bem definidas e saturadas)
      ========================================================= */
 
-  --success-color: #3F7D58;
-  --success-light: #EAF3ED;
+  --success-color: #10B981;
+  --success-light: #D1FAE5;
 
-  --warning-color: #C9821B;
-  --warning-light: #FBF1DF;
+  --warning-color: #FBBF24;
+  --warning-light: #FEF9C3;
 
-  --danger-color: #C94A4A;
-  --danger-light: #F9E7E7;
+  --danger-color: #EF4444;
+  --danger-light: #FEE2E2;
 
-  --info-color: #5F6B66;
-  --info-light: #ECEFED;
+  --info-color: #06B6D4;
+  --info-light: #CFFAFE;
 
 
   /* =========================================================
-     FUNDO
+     FUNDO (Um toque levemente colorido e iluminado)
      ========================================================= */
 
-  --background-color: #F4F2EE;
+  --background-color: #F8FAFC;
   --surface-color: #FFFFFF;
-  --surface-hover: #F8F7F4;
+  --surface-hover: #F1F5F9;
 
 
   /* =========================================================
-     TEXTOS
+     TEXTOS (Escuros, mas limpos e legíveis)
      ========================================================= */
 
-  --text-primary: #1C1C1C;
-  --text-secondary: #66635E;
-  --text-muted: #99958D;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
 
   --text-on-primary: #FFFFFF;
-  --text-on-accent: #FFFFFF;
+  --text-on-accent: #1E293B;
 
 
   /* =========================================================
      BORDAS
      ========================================================= */
 
-  --border-color: #DDD9D1;
-  --border-color-hover: #BDB7AC;
+  --border-color: #E2E8F0;
+  --border-color-hover: #CBD5E1;
 
 
   /* =========================================================
@@ -64,13 +64,13 @@
      ========================================================= */
 
   --shadow-sm:
-    0 1px 2px rgba(28, 28, 28, 0.05);
+    0 1px 2px rgba(37, 99, 235, 0.05);
 
   --shadow-md:
-    0 6px 18px rgba(28, 28, 28, 0.08);
+    0 6px 18px rgba(37, 99, 235, 0.08);
 
   --shadow-lg:
-    0 14px 35px rgba(28, 28, 28, 0.12);
+    0 14px 35px rgba(37, 99, 235, 0.12);
 
 
   /* =========================================================
